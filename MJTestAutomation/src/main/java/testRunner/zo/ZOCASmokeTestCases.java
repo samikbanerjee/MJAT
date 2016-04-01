@@ -1,7 +1,7 @@
 /**
  *
  */
-package zo.testRunner;
+package testRunner.zo;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,20 +9,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import tools.BaseTestCase;
-import zo.us.checkout.ZLUSGuestCheckoutVerifyOrderConfirmation;
-import zo.us.checkout.ZLUSLoggedInUserCheckOutConfirmation;
-import zo.us.registration.ZOUSLoginValidUser;
-import zo.us.registration.ZOUSRegistration;
+import zo.ca.checkout.ZLCAGuestCheckoutVerifyOrderConfirmation;
+import zo.ca.checkout.ZLCALoggedInUserCheckoutVerifyOrderConfirmation;
+import zo.ca.registration.ZOCALoginValidUser;
+import zo.ca.registration.ZOCARegistration;
 
 
 /**
  *
  */
-public class ZOUSSmokeTestCases extends BaseTestCase
+public class ZOCASmokeTestCases extends BaseTestCase
 {
 	private WebDriver driver;
 	private String baseUrl;
@@ -31,7 +32,6 @@ public class ZOUSSmokeTestCases extends BaseTestCase
 	/**
 	 * @throws Exception
 	 */
-
 	@Before
 	public void setUp() throws Exception
 	{
@@ -41,7 +41,7 @@ public class ZOUSSmokeTestCases extends BaseTestCase
 		caps.setCapability("version", "44.0");
 		caps.setCapability("screenResolution", "1280x1024");
 		caps.setCapability("name", name.getMethodName());
-		caps.setCapability("build", "ZOUSSmokeTestCases 03-30-2016 v0.1");
+		caps.setCapability("build", "ZOCASmokeTestCases 04-01-2016 v0.1");
 		caps.setCapability("acceptSslCerts", true);
 		caps.setCapability("tunnel-identifier", "MJConnection");
 
@@ -50,7 +50,7 @@ public class ZOUSSmokeTestCases extends BaseTestCase
 				+ authentication.getAccessKey() + URL), caps);
 		this.sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
 
-		baseUrl = "http://uszealoptics.stg/";
+		baseUrl = "http://cazealoptics.stg/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
@@ -63,57 +63,57 @@ public class ZOUSSmokeTestCases extends BaseTestCase
 		driver.quit();
 	}
 
+
 	/**
 	 * <p>
-	 * Site : ZO US; Scenario - Registration
+	 * Site : ZO CA; Scenario - Registration
 	 * </p>
-	 * *
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testZOUSRegistration() throws Exception
+	public void testZOCARegistration() throws Exception
 	{
-		new ZOUSRegistration().testZOUSRegistration(driver, baseUrl);
+		new ZOCARegistration().testZOCARegistration(driver, baseUrl);
 	}
 
 	/**
 	 * <p>
-	 * Site : ZO US; Scenario - Login Valid User
+	 * Site : ZO CA; Scenario - Logged in valid user
 	 * </p>
-	 * *
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testZOUSLoginValidUser() throws Exception
+	public void testZOCALoginValidUser() throws Exception
 	{
-		new ZOUSLoginValidUser().testZOUSLoginValidUser(driver, baseUrl);
+		new ZOCALoginValidUser().testZOCALoginValidUser(driver, baseUrl);
 	}
 
 	/**
 	 * <p>
-	 * Site : ZO US; Scenario - Checkout(Guest)
+	 * Site : ZO CA; Scenario - Checkout(Guest)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testZLUSGuestCheckoutVerifyOrderConfirmation() throws Exception
+	public void testZLCAGuestCheckoutVerifyOrderConfirmation() throws Exception
 	{
-		new ZLUSGuestCheckoutVerifyOrderConfirmation().testZLUSGuestCheckoutVerifyOrderConfirmation(driver, baseUrl);
+		new ZLCAGuestCheckoutVerifyOrderConfirmation().testZLCAGuestCheckoutVerifyOrderConfirmation(driver, baseUrl);
 	}
 
 	/**
 	 * <p>
-	 * Site : ZO US; Scenario - Checkout(Login)
+	 * Site : ZO CA; Scenario - Checkout(Login)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testZLUSLoggedInUserCheckOutConfirmation() throws Exception
+	public void testZLCALoggedInUserCheckoutVerifyOrderConfirmation() throws Exception
 	{
-		new ZLUSLoggedInUserCheckOutConfirmation().testZLUSLoggedInUserCheckOutConfirmation(driver, baseUrl);
+		new ZLCALoggedInUserCheckoutVerifyOrderConfirmation().testZLCALoggedInUserCheckoutVerifyOrderConfirmation(driver, baseUrl);
+
 	}
 }

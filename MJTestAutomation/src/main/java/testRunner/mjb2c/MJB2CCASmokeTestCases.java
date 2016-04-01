@@ -1,14 +1,14 @@
 /**
  *
  */
-package mjb2c.testRunner;
+package testRunner.mjb2c;
 
 import java.util.concurrent.TimeUnit;
 
-import mjb2c.us.checkout.MJB2CUSGuestCheckoutVerifyOrderConfirmation;
-import mjb2c.us.checkout.MJB2CUSLoginCheckoutVerifyOrderConfirmation;
-import mjb2c.us.registration.MJB2CUSLoginValidUser;
-import mjb2c.us.registration.MJB2CUSReg;
+import mjb2c.ca.checkout.MJB2CCAGuestCheckoutVerifyOrderConfirmation;
+import mjb2c.ca.checkout.MJB2CCALoginCheckoutVerifyOrderConfirmation;
+import mjb2c.ca.registration.MJB2CCALoginValidUser;
+import mjb2c.ca.registration.MJB2CCAReg;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,7 +23,7 @@ import tools.BaseTestCase;
 /**
  *
  */
-public class MJB2CUSSmokeTestCases extends BaseTestCase
+public class MJB2CCASmokeTestCases extends BaseTestCase
 {
 	private WebDriver driver;
 	private String baseUrl;
@@ -41,7 +41,7 @@ public class MJB2CUSSmokeTestCases extends BaseTestCase
 		caps.setCapability("version", "44.0");
 		caps.setCapability("screenResolution", "1280x1024");
 		caps.setCapability("name", name.getMethodName());
-		caps.setCapability("build", "MJB2CUSSmokeTestCases 03-29-2016 v0.1");
+		caps.setCapability("build", "MJB2CCASmokeTestCases 04-01-2016 v0.1");
 		caps.setCapability("acceptSslCerts", true);
 		caps.setCapability("tunnel-identifier", "MJConnection");
 
@@ -50,7 +50,7 @@ public class MJB2CUSSmokeTestCases extends BaseTestCase
 				+ authentication.getAccessKey() + URL), caps);
 		this.sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
 
-		baseUrl = "http://usmauijim.stg";
+		baseUrl = "http://camauijim.stg/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
@@ -66,83 +66,83 @@ public class MJB2CUSSmokeTestCases extends BaseTestCase
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Registration
+	 * Site : MJ B2C CA; Scenario - Registration
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testMJB2CUSReg() throws Exception
+	public void testMJB2CCAReg() throws Exception
 	{
-		new MJB2CUSReg().testMJB2CUSReg(driver, baseUrl);
+		new MJB2CCAReg().testMJB2CCAReg(driver, baseUrl);
 	}
-
 
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Registration(ForgotPasswordEmailSend)
+	 * Site: MJ B2C CA; Scenario -Registration (ForgotPasswordEmailSend)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	//	@Test
-	//	public void testMJB2CUSForgotPasswordEmailSend() throws Exception
+	//	public void testMJB2CCAForgotPasswordEmailSend() throws Exception
 	//	{
-	//		new MJB2CUSForgotPasswordEmailSend().testMJB2CUSForgotPasswordEmailSend(driver, baseUrl);
+	//		new MJB2CCAForgotPasswordEmailSend().testMJB2CCAForgotPasswordEmailSend(driver, baseUrl);
 	//	}
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Registration (LoginValidUser)
+	 * Site: MJ B2C CA; Scenario - Registration(LoginValidUser)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testMJB2CUSLoginValidUser() throws Exception
+	public void testMJB2CCALoginValidUser() throws Exception
 	{
-		new MJB2CUSLoginValidUser().testMJB2CUSLoginValidUser(driver, baseUrl);
+		new MJB2CCALoginValidUser().testMJB2CCALoginValidUser(driver, baseUrl);
 	}
+
 
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Registration (OpenForgotPasswordPage)
+	 * Site: Site: MJ B2C CA; Scenario - OpenForgotPasswordPage
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	//	@Test
-	//	public void testMJB2CUSOpenForgotPasswordPage() throws Exception
+	//	public void testMJB2CCAOpenForgotPasswordPage() throws Exception
 	//	{
-	//		new MJB2CUSOpenForgotPasswordPage().testMJB2CUSOpenForgotPasswordPage(driver, baseUrl);
+	//		new MJB2CCAOpenForgotPasswordPage().testMJB2CCAOpenForgotPasswordPage(driver, baseUrl);
 	//	}
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Checkout (Guest)
+	 * Site: Site: MJ B2C CA; Scenario - Checkout(Guest)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testMJB2CUSGuestCheckoutVerifyOrderConfirmation() throws Exception
+	public void testMJB2CCAGuestCheckoutVerifyOrderConfirmation() throws Exception
 	{
-		new MJB2CUSGuestCheckoutVerifyOrderConfirmation().testMJB2CUSGuestCheckoutVerifyOrderConfirmation(driver, baseUrl);
+		new MJB2CCAGuestCheckoutVerifyOrderConfirmation().testMJB2CCAGuestCheckoutVerifyOrderConfirmation(driver, baseUrl);
 	}
 
 	/**
 	 * <p>
-	 * Site: MJ B2C US; Scenario - Checkout (Login)
+	 * Site: Site: MJ B2C CA; Scenario - Checkout(Login)
 	 * </p>
 	 *
 	 * @throws Exception
 	 */
 	@Test
-	public void testMJB2CUSLoginCheckoutVerifyOrderConfirmation() throws Exception
+	public void testMJB2CCALoginCheckoutVerifyOrderConfirmation() throws Exception
 	{
-		new MJB2CUSLoginCheckoutVerifyOrderConfirmation().testMJB2CUSLoginCheckoutVerifyOrderConfirmation(driver, baseUrl);
-	}
+		new MJB2CCALoginCheckoutVerifyOrderConfirmation().testMJB2CCALoginCheckoutVerifyOrderConfirmation(driver, baseUrl);
 
+	}
 }
