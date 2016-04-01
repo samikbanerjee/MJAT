@@ -49,4 +49,40 @@ public class Cart
 		driver.findElement(By.xpath(".//form[@id='addToGiftCartForm']//button")).sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.elementToBeClickable(Cart.beginCheckout_Btn(driver)));
 	}
+
+	/**
+	 * @param driver
+	 * @return Gift Card Number Entry field
+	 */
+	public static WebElement gcNum_Text(final WebDriver driver)
+	{
+		return driver.findElement(By.id("inputGiftCard"));
+	}
+
+	/**
+	 * @param driver
+	 * @return Gift Card Pin Entry field
+	 */
+	public static WebElement gcPin_Text(final WebDriver driver)
+	{
+		return driver.findElement(By.id("inputGiftCardPin"));
+	}
+
+	/**
+	 * @param driver
+	 * @return Submit Gift Card
+	 */
+	public static WebElement gcApply_Btn(final WebDriver driver)
+	{
+		return driver.findElement(By.id("submit_button"));
+	}
+
+	/**
+	 * @param driver
+	 * @return Cart Order Summary Section Order Total
+	 */
+	public static WebElement orderSummary_Total_Label(final WebDriver driver)
+	{
+		return driver.findElement(By.className("order-summary-gtotal"));
+	}
 }
