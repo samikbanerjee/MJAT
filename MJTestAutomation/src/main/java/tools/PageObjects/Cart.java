@@ -3,6 +3,8 @@
  */
 package tools.PageObjects;
 
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -52,7 +54,7 @@ public class Cart
 
 	/**
 	 * @param driver
-	 * @return Gift Card Number Entry field
+	 * @return Gift Card Number Entry Text
 	 */
 	public static WebElement gcNum_Text(final WebDriver driver)
 	{
@@ -61,7 +63,7 @@ public class Cart
 
 	/**
 	 * @param driver
-	 * @return Gift Card Pin Entry field
+	 * @return Gift Card Pin Entry Text
 	 */
 	public static WebElement gcPin_Text(final WebDriver driver)
 	{
@@ -70,7 +72,7 @@ public class Cart
 
 	/**
 	 * @param driver
-	 * @return Submit Gift Card
+	 * @return Gift Card Submit button
 	 */
 	public static WebElement gcApply_Btn(final WebDriver driver)
 	{
@@ -79,10 +81,20 @@ public class Cart
 
 	/**
 	 * @param driver
-	 * @return Cart Order Summary Section Order Total
+	 * @return Order Summary Total
 	 */
 	public static WebElement orderSummary_Total_Label(final WebDriver driver)
 	{
 		return driver.findElement(By.className("order-summary-gtotal"));
+
+	}
+
+	/**
+	 * @param driver
+	 * @return Error label
+	 */
+	public static WebElement gcApply_Error_label(final WebDriver driver)
+	{
+		return driver.findElement(By.xpath(".//*[@id='rg_card_bt_p']//*[@class='alert-checkbalance']"));
 	}
 }
