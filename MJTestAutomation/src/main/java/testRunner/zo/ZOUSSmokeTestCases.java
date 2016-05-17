@@ -41,7 +41,7 @@ public class ZOUSSmokeTestCases extends BaseTestCase
 		caps.setCapability("version", "44.0");
 		caps.setCapability("screenResolution", "1280x1024");
 		caps.setCapability("name", name.getMethodName());
-		caps.setCapability("build", "ZOUSSmokeTestCases 04-01-2016 v0.1");
+		caps.setCapability("build", "ZOUSSmokeTestCases 04-01-2016 v0.2");
 		caps.setCapability("acceptSslCerts", true);
 		caps.setCapability("tunnel-identifier", "MJConnection");
 

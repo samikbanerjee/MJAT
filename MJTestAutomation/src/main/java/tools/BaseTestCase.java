@@ -19,11 +19,11 @@ public class BaseTestCase implements SauceOnDemandSessionIdProvider
 	/**
 	 * Sauce Username
 	 */
-	public static final String USERNAME = "MadhuYarli";;//"samikbanerjee1";//"MadhuYarli";
+	public static final String USERNAME = "samikbanerjee1";;//"samikbanerjee1";//"MadhuYarli";
 	/**
 	 * Sauce AutomateKey
 	 */
-	public static final String AUTOMATE_KEY = "4a4a991a-58e2-4e58-9203-933b569f5f5f";//"176d0ad6-8028-4068-bf7a-8617758ed99b";//"4a4a991a-58e2-4e58-9203-933b569f5f5f";
+	public static final String AUTOMATE_KEY = "176d0ad6-8028-4068-bf7a-8617758ed99b";//"176d0ad6-8028-4068-bf7a-8617758ed99b";//"4a4a991a-58e2-4e58-9203-933b569f5f5f";
 
 	/**
 	 * Sauce URL

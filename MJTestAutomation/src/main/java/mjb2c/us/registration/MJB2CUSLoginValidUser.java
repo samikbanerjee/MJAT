@@ -28,6 +28,8 @@ public class MJB2CUSLoginValidUser
 		driver.get(baseUrl + "/");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("/html/body/div[3]/header/nav/div/div[2]/div[1]/ul[1]/li[2]/a")).click();
+		Thread.sleep(1000);
+
 		driver.findElement(By.linkText(COUNTRY_SELECTOR)).click();
 		LoginRegistration.regPage_Link(driver).click();
 		LoginRegistration.regPage_Login_User(driver).clear();
@@ -35,10 +37,11 @@ public class MJB2CUSLoginValidUser
 		LoginRegistration.regPage_Login_Pass(driver).clear();
 		LoginRegistration.regPage_Login_Pass(driver).sendKeys(CUST_PASS);
 		LoginRegistration.regPage_Login_Submit(driver).click();
-		assertEquals("Sunglasses designed to change the way you see the world..", driver.getTitle());
+		assertEquals("Sunglasses designed to change the way you see the world.", driver.getTitle());
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Logout")).click();
 	}
+
 
 
 }

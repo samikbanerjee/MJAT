@@ -40,7 +40,7 @@ public class MJB2CUSLoginCheckoutVerifyOrderConfirmation
 	private static final String CUST_FIRSTNAME = "Kamaljeet";
 	private static final String CUST_PASSWORD = "Testing@1";
 	private static final String CUST_USERNAME = "kamaljeet@pragiti.com";
-	private static final String PDP_URL = "/en/shop/sunglasses/active-collection/insomnia";
+	private static final String PDP_URL = "/en/shop/sunglasses/aviators/sand-island";
 
 	/**
 	 * @param driver

@@ -40,7 +40,7 @@ public class MJB2CUSGuestCheckoutVerifyOrderConfirmation
 	private static final String CUST_LASTNAME = "Singh";
 	private static final String CUST_FIRSTNAME = "Kamaljeet";
 	private static final String CUST_EMAIL = "kamaljeet@pragiti.com";
-	private static final String PDP_URL = "/en/shop/sunglasses/active-collection/insomnia";
+	private static final String PDP_URL = "/en/p/H526-26";//"/en/shop/sunglasses/aviators/sand-island";
 
 	/**
 	 * @param driver
@@ -50,6 +50,7 @@ public class MJB2CUSGuestCheckoutVerifyOrderConfirmation
 	public void testMJB2CUSGuestCheckoutVerifyOrderConfirmation(final WebDriver driver, final String baseUrl) throws Exception
 	{
 		{
+
 			//GO TO PDP
 			driver.get(baseUrl + PDP_URL);
 			final WebDriverWait wait = new WebDriverWait(driver, 30);
