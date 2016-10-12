@@ -36,6 +36,7 @@ public class MJB2CUSSmokeTestCases extends BaseTestCase
 	public void setUp() throws Exception
 	{
 		//driver = new FirefoxDriver();
+
 		final DesiredCapabilities caps = DesiredCapabilities.firefox();
 		caps.setCapability("platform", "Windows 10");
 		caps.setCapability("version", "44.0");
@@ -49,6 +50,8 @@ public class MJB2CUSSmokeTestCases extends BaseTestCase
 		driver = new RemoteWebDriver(new java.net.URL("http://" + authentication.getUsername() + ":"
 				+ authentication.getAccessKey() + URL), caps);
 		this.sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
+
+
 
 		baseUrl = "http://usmauijim.stg";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
