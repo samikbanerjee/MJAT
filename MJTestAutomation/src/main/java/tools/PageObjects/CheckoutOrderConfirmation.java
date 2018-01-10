@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 /**
  *
  */
-@SuppressWarnings("javadoc")
+
 public class CheckoutOrderConfirmation
 {
 	public static WebElement confirmationCreateAcct_Hdr(final WebDriver driver)

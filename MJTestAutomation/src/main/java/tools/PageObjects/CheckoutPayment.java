@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 /**
  *
  */
-@SuppressWarnings("javadoc")
+
 public class CheckoutPayment
 {
 
