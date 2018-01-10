@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 /**
  *
  */
-@SuppressWarnings("javadoc")
+
 public class CheckoutShipping
 {
 	public static WebElement shippingAddNewAddress(final WebDriver driver)
@@ -56,7 +56,7 @@ public class CheckoutShipping
 
 	public static WebElement country(final WebDriver driver)
 	{
-		//TODO : Refine
+		
 		return null;
 	}
 
